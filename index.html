@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camacho Tires — Tires, Wheels & Auto Service in Selma, CA</title>
+  <meta name="description" content="Camacho Tires is Selma's family-owned tire shop. New & used tires, mount & balance, flat repair, alignments and oil changes — fast, fair and done right. Now at 1605 W Front St, Selma, CA. Call (559) 898-0870." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'><rect width='36' height='36' rx='8' fill='%230C0C0F'/><circle cx='18' cy='18' r='11' fill='none' stroke='%23F4F1EA' stroke-width='2.6'/><circle cx='18' cy='18' r='4.2' fill='%23C2272D'/><path d='M18 7v6M28.5 14.6l-5.7 1.9M24.5 27.1 21 22.2M11.5 27.1l3.5-4.9M7.5 14.6l5.7 1.9' stroke='%23C2272D' stroke-width='2.4' stroke-linecap='round'/></svg>" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink:   '#0C0C0F',
+            coal:  '#141418',
+            steel: '#1D1D23',
+            line:  '#2A2A33',
+            brand: { DEFAULT: '#C2272D', deep: '#9A1B20' },
+            gold:  { DEFAULT: '#F2B92E', deep: '#D99E14' },
+            brandlite: '#E25B60',
+            bone:  '#F4F1EA',
+            smoke: '#A3A3AD',
+          },
+          fontFamily: {
+            disp: ['"Barlow Condensed"', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: Inter, sans-serif; background: #0C0C0F; }
+    ::selection { background: #C2272D; color: #F4F1EA; }
+
+    /* sign-style wordmark: red letters, white outline, hard shadow */
+    .logo-word {
+      -webkit-text-stroke: 0.5px rgba(244,241,234,0.9);
+      text-shadow: 2px 2px 0 rgba(0,0,0,0.65);
+    }
+
+    /* tread pattern */
+    .tread {
+      background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 2px, transparent 2px, transparent 14px);
+    }
+    .hero-glow {
+      background:
+        radial-gradient(900px 480px at 78% 18%, rgba(194,39,45,0.18), transparent 62%),
+        radial-gradient(700px 420px at 8% 92%, rgba(242,185,46,0.06), transparent 60%);
+    }
+    .card-glow:hover { box-shadow: 0 18px 50px -18px rgba(194,39,45,0.35); }
+
+    /* reveal on scroll */
+    .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1); }
+    .reveal.in { opacity: 1; transform: none; }
+    .d1 { transition-delay: .08s } .d2 { transition-delay: .16s } .d3 { transition-delay: .24s }
+    .d4 { transition-delay: .32s } .d5 { transition-delay: .40s }
+
+    /* marquee */
+    @keyframes slide { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+    .marquee { animation: slide 28s linear infinite; }
+
+    .ticket { border-left: 3px solid #C2272D; }
+    .num-ghost { -webkit-text-stroke: 1px rgba(244,241,234,0.22); color: transparent; }
+  </style>
+</head>
+<body class="bg-ink text-bone antialiased overflow-x-hidden">
+
+  <!-- ======= TOP BAR ======= -->
+  <div class="bg-brand text-white text-[13px] font-semibold">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex items-center justify-between gap-3">
+      <p class="truncate"><span class="font-bold uppercase tracking-wide">We moved!</span> Visit us at our new shop — 1605 W Front St, Selma</p>
+      <div class="hidden md:flex items-center gap-5 shrink-0">
+        <span>Mon–Fri 7 AM–6 PM · Sat 7 AM–4 PM</span>
+        <span class="font-bold">Se Habla Español</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= NAV ======= -->
+  <header class="sticky top-0 z-50 bg-ink/90 backdrop-blur border-b border-line">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 h-[72px] flex items-center justify-between">
+      <a href="#top" class="flex flex-col leading-none select-none" aria-label="Camacho Tires home">
+        <span class="logo-word flex items-center font-disp italic font-extrabold uppercase text-[30px] tracking-tight text-brand">CAMACH<svg class="ml-[2px]" width="25" height="25" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="#101013" stroke="#F4F1EA" stroke-width="3"/><g stroke="#C2272D" stroke-width="3.4" stroke-linecap="round"><line x1="20" y1="20" x2="20" y2="9.5"/><line x1="20" y1="20" x2="30" y2="16.8"/><line x1="20" y1="20" x2="26.2" y2="28.6"/><line x1="20" y1="20" x2="13.8" y2="28.6"/><line x1="20" y1="20" x2="10" y2="16.8"/></g><circle cx="20" cy="20" r="4.4" fill="#C2272D"/></svg></span>
+        <span class="self-end font-disp italic font-bold uppercase text-[13px] tracking-[0.42em] text-gold -mt-0.5 mr-0.5">Tires</span>
+      </a>
+      <div class="hidden lg:flex items-center gap-9 text-[15px] font-medium text-smoke">
+        <a href="#services" class="hover:text-bone transition-colors">Services</a>
+        <a href="#why" class="hover:text-bone transition-colors">Why Us</a>
+        <a href="#reviews" class="hover:text-bone transition-colors">Reviews</a>
+        <a href="#visit" class="hover:text-bone transition-colors">Find Us</a>
+      </div>
+      <a href="tel:+15598980870" class="hidden sm:inline-flex items-center gap-2.5 bg-brand hover:bg-brand-deep text-white font-bold text-[15px] px-5 py-2.5 rounded-md transition-colors">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg>
+        (559) 898-0870
+      </a>
+      <a href="tel:+15598980870" class="sm:hidden inline-flex items-center justify-center w-11 h-11 rounded-md bg-brand text-white">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg>
+      </a>
+    </nav>
+  </header>
+
+  <!-- ======= HERO ======= -->
+  <section id="top" class="relative tread hero-glow border-b border-line overflow-hidden">
+    <!-- big tire graphic -->
+    <svg class="hidden md:block absolute -right-40 -bottom-44 w-[620px] h-[620px] opacity-[0.16] pointer-events-none select-none" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+      <circle cx="100" cy="100" r="92" stroke="#F4F1EA" stroke-width="13"/>
+      <circle cx="100" cy="100" r="92" stroke="#0C0C0F" stroke-width="13" stroke-dasharray="7 11"/>
+      <circle cx="100" cy="100" r="58" stroke="#F4F1EA" stroke-width="2.5"/>
+      <g stroke="#F4F1EA" stroke-width="6" stroke-linecap="round">
+        <line x1="100" y1="58" x2="100" y2="86"/><line x1="100" y1="114" x2="100" y2="142"/>
+        <line x1="58" y1="100" x2="86" y2="100"/><line x1="114" y1="100" x2="142" y2="100"/>
+        <line x1="71" y1="71" x2="90" y2="90"/><line x1="110" y1="110" x2="129" y2="129"/>
+        <line x1="129" y1="71" x2="110" y2="90"/><line x1="90" y1="110" x2="71" y2="129"/>
+      </g>
+      <circle cx="100" cy="100" r="13" fill="#F4F1EA"/>
+    </svg>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 pt-16 pb-20 sm:pt-24 sm:pb-28">
+      <div class="max-w-3xl">
+        <div class="reveal inline-flex items-center gap-2 bg-steel border border-line rounded-full pl-1.5 pr-4 py-1.5 text-[13px] font-medium text-smoke mb-7">
+          <span class="bg-brand text-white text-[11px] font-bold uppercase tracking-wider rounded-full px-2.5 py-0.5">New Location</span>
+          Now open at 1605 W Front St, Selma
+        </div>
+        <h1 class="reveal d1 font-disp italic font-extrabold uppercase leading-[0.95] text-[clamp(52px,9vw,104px)] tracking-tight">
+          Selma's Family<br/>Tire Shop.<br/><span class="text-brand">In &amp; Out Fast.</span>
+        </h1>
+        <div class="reveal d1 mt-7 h-3 w-72 max-w-full opacity-80" style="background: repeating-linear-gradient(100deg, rgba(244,241,234,0.85) 0 9px, transparent 9px 17px); transform: skewX(-18deg); border-radius: 2px;" aria-hidden="true"></div>
+        <p class="reveal d2 mt-7 text-[17px] sm:text-lg leading-relaxed text-smoke max-w-xl">
+          New and used tires, mount &amp; balance, flat repair, alignments and oil changes — done right by a father-and-son crew that treats your car like their own. No appointments, no all-day waits.
+        </p>
+        <div class="reveal d3 mt-9 flex flex-wrap items-center gap-4">
+          <a href="tel:+15598980870" class="inline-flex items-center gap-2.5 bg-brand hover:bg-brand-deep text-white font-bold px-7 py-4 rounded-md text-base transition-colors">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg>
+            Call (559) 898-0870
+          </a>
+          <a href="#visit" class="inline-flex items-center gap-2.5 border border-line hover:border-brand text-bone font-semibold px-7 py-4 rounded-md text-base transition-colors">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.5-7-11a7 7 0 1 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+            Get Directions
+          </a>
+        </div>
+
+        <!-- proof stats -->
+        <dl class="reveal d4 mt-14 grid grid-cols-2 sm:grid-cols-4 gap-px bg-line border border-line rounded-lg overflow-hidden max-w-2xl">
+          <div class="bg-coal px-5 py-4">
+            <dt class="text-[12px] uppercase tracking-wider text-smoke">Google Rating</dt>
+            <dd class="font-disp font-bold text-[30px] leading-tight text-gold">4.8 ★</dd>
+          </div>
+          <div class="bg-coal px-5 py-4">
+            <dt class="text-[12px] uppercase tracking-wider text-smoke">Reviews</dt>
+            <dd class="font-disp font-bold text-[30px] leading-tight">125+</dd>
+          </div>
+          <div class="bg-coal px-5 py-4">
+            <dt class="text-[12px] uppercase tracking-wider text-smoke">BBB Rating</dt>
+            <dd class="font-disp font-bold text-[30px] leading-tight">A+</dd>
+          </div>
+          <div class="bg-coal px-5 py-4">
+            <dt class="text-[12px] uppercase tracking-wider text-smoke">Owned &amp; Run</dt>
+            <dd class="font-disp font-bold text-[30px] leading-tight">Family</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= MARQUEE ======= -->
+  <div class="bg-coal border-b border-line py-4 overflow-hidden" aria-hidden="true">
+    <div class="marquee flex whitespace-nowrap font-disp font-semibold uppercase tracking-[0.18em] text-[15px] text-smoke">
+      <div class="flex shrink-0">
+        <span class="mx-7">New Tires</span><span class="text-gold">●</span><span class="mx-7">Used Tires</span><span class="text-gold">●</span><span class="mx-7">Mount &amp; Balance</span><span class="text-gold">●</span><span class="mx-7">Flat Repair</span><span class="text-gold">●</span><span class="mx-7">Alignments</span><span class="text-gold">●</span><span class="mx-7">Oil Changes</span><span class="text-gold">●</span><span class="mx-7">Goodyear &amp; Cooper Dealer</span><span class="text-gold">●</span>
+      </div>
+      <div class="flex shrink-0">
+        <span class="mx-7">New Tires</span><span class="text-gold">●</span><span class="mx-7">Used Tires</span><span class="text-gold">●</span><span class="mx-7">Mount &amp; Balance</span><span class="text-gold">●</span><span class="mx-7">Flat Repair</span><span class="text-gold">●</span><span class="mx-7">Alignments</span><span class="text-gold">●</span><span class="mx-7">Oil Changes</span><span class="text-gold">●</span><span class="mx-7">Goodyear &amp; Cooper Dealer</span><span class="text-gold">●</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= SERVICES ======= -->
+  <section id="services" class="max-w-7xl mx-auto px-4 sm:px-6 py-20 sm:py-28">
+    <div class="reveal flex flex-wrap items-end justify-between gap-6 mb-12 sm:mb-16">
+      <div>
+        <p class="text-gold font-semibold uppercase tracking-[0.2em] text-[13px] mb-3">What we do</p>
+        <h2 class="font-disp italic font-extrabold uppercase text-[clamp(38px,6vw,64px)] leading-[0.95] tracking-tight">Everything your<br/>wheels need</h2>
+      </div>
+      <p class="text-smoke max-w-sm text-[15px] leading-relaxed">Bought tires online or at a big-box store? Bring them in — we'll mount and balance them same day.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- card -->
+      <div class="reveal card-glow group bg-coal border border-line rounded-xl p-7 transition-all duration-300 hover:-translate-y-1 hover:border-brand/60">
+        <div class="flex items-start justify-between mb-8">
+          <div class="w-12 h-12 rounded-lg bg-brand/10 border border-brand/25 flex items-center justify-center text-brandlite">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.2"/><path d="M12 3v2.6M12 18.4V21M3 12h2.6M18.4 12H21M5.6 5.6l1.9 1.9M16.5 16.5l1.9 1.9M18.4 5.6l-1.9 1.9M7.5 16.5l-1.9 1.9"/></svg>
+          </div>
+          <span class="num-ghost font-disp font-extrabold text-[44px] leading-none">01</span>
+        </div>
+        <h3 class="font-disp font-bold uppercase text-[24px] tracking-wide mb-2">New &amp; Used Tires</h3>
+        <p class="text-smoke text-[15px] leading-relaxed">Quality new tires from Goodyear, Cooper and more — plus inspected used tires when the budget's tight. We'll walk you through every option.</p>
+      </div>
+
+      <div class="reveal d1 card-glow group bg-coal border border-line rounded-xl p-7 transition-all duration-300 hover:-translate-y-1 hover:border-brand/60">
+        <div class="flex items-start justify-between mb-8">
+          <div class="w-12 h-12 rounded-lg bg-brand/10 border border-brand/25 flex items-center justify-center text-brandlite">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M5 7l14 10M19 7 5 17"/><circle cx="12" cy="12" r="9"/></svg>
+          </div>
+          <span class="num-ghost font-disp font-extrabold text-[44px] leading-none">02</span>
+        </div>
+        <h3 class="font-disp font-bold uppercase text-[24px] tracking-wide mb-2">Mount &amp; Balance</h3>
+        <p class="text-smoke text-[15px] leading-relaxed">Precision mounting and computer balancing for a smooth, vibration-free ride. We happily install tires you purchased anywhere else.</p>
+      </div>
+
+      <div class="reveal d2 card-glow group bg-coal border border-line rounded-xl p-7 transition-all duration-300 hover:-translate-y-1 hover:border-brand/60">
+        <div class="flex items-start justify-between mb-8">
+          <div class="w-12 h-12 rounded-lg bg-brand/10 border border-brand/25 flex items-center justify-center text-brandlite">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 13.5 13.5 3l3 3-1.5 1.5 2.5 2.5L21 6.5 17.5 21l-7-7L3 13.5Z"/><path d="m10.5 14-4 4"/></svg>
+          </div>
+          <span class="num-ghost font-disp font-extrabold text-[44px] leading-none">03</span>
+        </div>
+        <h3 class="font-disp font-bold uppercase text-[24px] tracking-wide mb-2">Flat Repair</h3>
+        <p class="text-smoke text-[15px] leading-relaxed">Nail in your tire? Slow leak? We patch and plug flats fast so you're back on the road — most repairs done while you wait.</p>
+      </div>
+
+      <div class="reveal d3 card-glow group bg-coal border border-line rounded-xl p-7 transition-all duration-300 hover:-translate-y-1 hover:border-brand/60">
+        <div class="flex items-start justify-between mb-8">
+          <div class="w-12 h-12 rounded-lg bg-brand/10 border border-brand/25 flex items-center justify-center text-brandlite">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/></svg>
+          </div>
+          <span class="num-ghost font-disp font-extrabold text-[44px] leading-none">04</span>
+        </div>
+        <h3 class="font-disp font-bold uppercase text-[24px] tracking-wide mb-2">Wheel Alignment</h3>
+        <p class="text-smoke text-[15px] leading-relaxed">Pulling to one side or wearing tires unevenly? Our alignments protect your new tires and keep your steering straight and true.</p>
+      </div>
+
+      <div class="reveal d4 card-glow group bg-coal border border-line rounded-xl p-7 transition-all duration-300 hover:-translate-y-1 hover:border-brand/60">
+        <div class="flex items-start justify-between mb-8">
+          <div class="w-12 h-12 rounded-lg bg-brand/10 border border-brand/25 flex items-center justify-center text-brandlite">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3c3 4.5 5.5 7.6 5.5 10.6a5.5 5.5 0 1 1-11 0C6.5 10.6 9 7.5 12 3Z"/></svg>
+          </div>
+          <span class="num-ghost font-disp font-extrabold text-[44px] leading-none">05</span>
+        </div>
+        <h3 class="font-disp font-bold uppercase text-[24px] tracking-wide mb-2">Oil Changes</h3>
+        <p class="text-smoke text-[15px] leading-relaxed">Quick, honest oil changes with quality oil and filters. We'll top off fluids and give your tires a once-over while we're at it.</p>
+      </div>
+
+      <div class="reveal d5 card-glow group bg-coal border border-line rounded-xl p-7 transition-all duration-300 hover:-translate-y-1 hover:border-brand/60">
+        <div class="flex items-start justify-between mb-8">
+          <div class="w-12 h-12 rounded-lg bg-brand/10 border border-brand/25 flex items-center justify-center text-brandlite">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.5 6.5a4 4 0 0 0-5.4 5.2L3 17.8V21h3.2l6.1-6.1a4 4 0 0 0 5.2-5.4l-2.6 2.6-2.4-.6-.6-2.4 2.6-2.6Z"/></svg>
+          </div>
+          <span class="num-ghost font-disp font-extrabold text-[44px] leading-none">06</span>
+        </div>
+        <h3 class="font-disp font-bold uppercase text-[24px] tracking-wide mb-2">Mechanic Services</h3>
+        <p class="text-smoke text-[15px] leading-relaxed">Brakes, suspension and general repairs from our on-site mechanic. One stop for tires and the work that keeps them rolling safe.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= WHY US ======= -->
+  <section id="why" class="bg-coal border-y border-line tread">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-20 sm:py-28 grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+      <div>
+        <p class="reveal text-gold font-semibold uppercase tracking-[0.2em] text-[13px] mb-3">Why Camacho</p>
+        <h2 class="reveal d1 font-disp italic font-extrabold uppercase text-[clamp(38px,6vw,64px)] leading-[0.95] tracking-tight mb-7">A dad &amp; son crew,<br/>not a big-box line</h2>
+        <p class="reveal d2 text-smoke text-[16px] leading-relaxed mb-9 max-w-lg">
+          While the chains make you drop your car off for half a day, we get you in, get it done and get you back on the road. That's why Selma keeps choosing us — and why our customers say they won't go anywhere else.
+        </p>
+        <ul class="space-y-5">
+          <li class="reveal d2 ticket bg-steel rounded-r-lg px-5 py-4 flex gap-4 items-start">
+            <svg class="text-brandlite shrink-0 mt-0.5" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M13 2 4.5 13.5H11L9.5 22 19 9.5h-6.5L13 2Z"/></svg>
+            <div><p class="font-semibold text-[15px]">Fast turnaround, no appointment</p><p class="text-smoke text-[14px] mt-0.5">Most tire jobs done while you wait — not “come back at 4.”</p></div>
+          </li>
+          <li class="reveal d3 ticket bg-steel rounded-r-lg px-5 py-4 flex gap-4 items-start">
+            <svg class="text-brandlite shrink-0 mt-0.5" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M7 6.5h7.2a2.8 2.8 0 1 1 0 5.6H9.8a2.8 2.8 0 1 0 0 5.6H17"/></svg>
+            <div><p class="font-semibold text-[15px]">Fair, upfront prices</p><p class="text-smoke text-[14px] mt-0.5">Straight talk and honest quotes — new or used, we fit your budget.</p></div>
+          </li>
+          <li class="reveal d4 ticket bg-steel rounded-r-lg px-5 py-4 flex gap-4 items-start">
+            <svg class="text-brandlite shrink-0 mt-0.5" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 21s-7.5-4.6-9.3-9.6C1.6 8 3.6 5 6.7 5c2 0 3.6 1.1 5.3 3 1.7-1.9 3.3-3 5.3-3 3.1 0 5.1 3 4 6.4C19.5 16.4 12 21 12 21Z"/></svg>
+            <div><p class="font-semibold text-[15px]">Family owned &amp; operated</p><p class="text-smoke text-[14px] mt-0.5">You deal with the people who own the shop — every single visit.</p></div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- review spotlight panel -->
+      <div class="reveal d2 relative">
+        <div class="absolute -inset-3 bg-brand/8 rounded-2xl rotate-1" aria-hidden="true"></div>
+        <figure class="relative bg-ink border border-line rounded-2xl p-8 sm:p-10">
+          <div class="flex text-gold text-[22px] tracking-widest mb-5" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote class="font-disp text-[clamp(26px,3.4vw,36px)] font-semibold leading-[1.15]">
+            “Probably the best dad and son shop ever. Quick, polite service — I've had them mount and balance four times on three different cars.”
+          </blockquote>
+          <figcaption class="mt-7 flex items-center justify-between gap-4">
+            <span class="text-smoke text-[14px]">Google review · Selma, CA</span>
+            <span class="inline-flex items-center gap-2 text-[13px] font-semibold bg-steel border border-line rounded-full px-4 py-1.5">
+              <svg width="14" height="14" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.5 12.2c0-.8-.07-1.5-.2-2.2H12v4.3h5.9a5 5 0 0 1-2.2 3.3v2.7h3.5c2-1.9 3.3-4.7 3.3-8.1Z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-1 7.28-2.7l-3.5-2.7c-1 .65-2.23 1.04-3.78 1.04-2.9 0-5.36-1.96-6.24-4.6H2.14v2.9A11 11 0 0 0 12 23Z"/><path fill="#FBBC05" d="M5.76 14.04a6.6 6.6 0 0 1 0-4.2V6.94H2.14a11 11 0 0 0 0 9.9l3.62-2.8Z"/><path fill="#EA4335" d="M12 5.4c1.62 0 3.06.56 4.2 1.64l3.1-3.1A11 11 0 0 0 2.14 6.94l3.62 2.9C6.64 7.2 9.1 5.4 12 5.4Z"/></svg>
+              4.8 on Google
+            </span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= BRANDS ======= -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+    <div class="reveal grid md:grid-cols-[1fr_auto] gap-8 items-center bg-coal border border-line rounded-2xl px-8 sm:px-12 py-10">
+      <div>
+        <h2 class="font-disp italic font-bold uppercase text-[28px] sm:text-[34px] tracking-wide leading-tight">Authorized independent <span class="text-gold">Goodyear</span> &amp; <span class="text-gold">Cooper</span> dealer</h2>
+        <p class="text-smoke text-[15px] mt-2 max-w-xl">Name-brand tires at hometown prices — backed by manufacturer warranties and our own handshake.</p>
+      </div>
+      <div class="flex items-center gap-8 font-disp italic font-extrabold uppercase text-[26px] tracking-wider text-bone/80">
+        <span class="italic">Goodyear</span>
+        <span class="w-px h-8 bg-line"></span>
+        <span class="italic">Cooper</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= REVIEWS ======= -->
+  <section id="reviews" class="max-w-7xl mx-auto px-4 sm:px-6 pb-20 sm:pb-28">
+    <div class="reveal text-center mb-12 sm:mb-16">
+      <p class="text-gold font-semibold uppercase tracking-[0.2em] text-[13px] mb-3">Reviews</p>
+      <h2 class="font-disp italic font-extrabold uppercase text-[clamp(38px,6vw,64px)] leading-[0.95] tracking-tight">Selma has spoken</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-5">
+      <figure class="reveal bg-coal border border-line rounded-xl p-7 flex flex-col">
+        <div class="flex text-gold tracking-widest mb-4" aria-label="5 stars">★★★★★</div>
+        <blockquote class="text-[15px] leading-relaxed text-bone/90 flex-1">“These guys saved me! Had a flat and needed tires replaced — they went over my options and had competitive prices.”</blockquote>
+        <figcaption class="mt-6 pt-5 border-t border-line text-[13px] text-smoke">Google review</figcaption>
+      </figure>
+      <figure class="reveal d1 bg-coal border border-line rounded-xl p-7 flex flex-col">
+        <div class="flex text-gold tracking-widest mb-4" aria-label="5 stars">★★★★★</div>
+        <blockquote class="text-[15px] leading-relaxed text-bone/90 flex-1">“Small family-owned business with amazing service and reasonable prices. I don't take my cars anywhere else.”</blockquote>
+        <figcaption class="mt-6 pt-5 border-t border-line text-[13px] text-smoke">Google review</figcaption>
+      </figure>
+      <figure class="reveal d2 bg-coal border border-line rounded-xl p-7 flex flex-col">
+        <div class="flex text-gold tracking-widest mb-4" aria-label="5 stars">★★★★★</div>
+        <blockquote class="text-[15px] leading-relaxed text-bone/90 flex-1">“Friendly and professional. I would NOT go to anyone else — highly recommended. They do it all and it's well worth it.”</blockquote>
+        <figcaption class="mt-6 pt-5 border-t border-line text-[13px] text-smoke">Google review</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ======= VISIT / CONTACT ======= -->
+  <section id="visit" class="bg-coal border-t border-line">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-20 sm:py-28 grid lg:grid-cols-2 gap-12 lg:gap-16">
+      <div>
+        <p class="reveal text-gold font-semibold uppercase tracking-[0.2em] text-[13px] mb-3">Find us</p>
+        <h2 class="reveal d1 font-disp italic font-extrabold uppercase text-[clamp(38px,6vw,64px)] leading-[0.95] tracking-tight mb-8">Swing by the<br/>new shop</h2>
+
+        <div class="reveal d2 space-y-6">
+          <div class="flex gap-4 items-start">
+            <div class="w-11 h-11 rounded-lg bg-brand/10 border border-brand/25 flex items-center justify-center text-brandlite shrink-0">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.5-7-11a7 7 0 1 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold">1605 W Front St, Selma, CA 93662</p>
+              <p class="text-smoke text-[14px] mt-0.5">Our new location — just off Highway 99.</p>
+              <a class="text-gold text-[14px] font-semibold hover:underline" href="https://www.google.com/maps/dir/?api=1&destination=Camacho+Tires,+1605+W+Front+St,+Selma,+CA+93662" target="_blank" rel="noopener">Open in Google Maps →</a>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="w-11 h-11 rounded-lg bg-brand/10 border border-brand/25 flex items-center justify-center text-brandlite shrink-0">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold"><a href="tel:+15598980870" class="hover:text-brand transition-colors">(559) 898-0870</a></p>
+              <p class="text-smoke text-[14px] mt-0.5">Call for a quote — we'll have your size ready when you arrive.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <div class="w-11 h-11 rounded-lg bg-brand/10 border border-brand/25 flex items-center justify-center text-brandlite shrink-0">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+            </div>
+            <div class="w-full max-w-xs">
+              <p class="font-semibold mb-2">Hours</p>
+              <dl class="text-[14px] space-y-1.5">
+                <div class="flex justify-between gap-6"><dt class="text-smoke">Mon – Fri</dt><dd class="font-medium">7:00 AM – 6:00 PM</dd></div>
+                <div class="flex justify-between gap-6"><dt class="text-smoke">Saturday</dt><dd class="font-medium">7:00 AM – 4:00 PM</dd></div>
+                <div class="flex justify-between gap-6"><dt class="text-smoke">Sunday</dt><dd class="font-medium text-smoke">Closed</dd></div>
+              </dl>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2.5 pt-1">
+            <span class="text-[12.5px] font-semibold bg-steel border border-line rounded-full px-3.5 py-1.5">Se Habla Español</span>
+            <span class="text-[12.5px] font-semibold bg-steel border border-line rounded-full px-3.5 py-1.5">Visa · MC · Amex · Debit</span>
+            <span class="text-[12.5px] font-semibold bg-steel border border-line rounded-full px-3.5 py-1.5">Walk-ins welcome</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="map" class="reveal d2 relative rounded-2xl overflow-hidden border border-line min-h-[380px] lg:min-h-0 bg-steel">
+        <!-- fallback shown if the map embed can't load -->
+        <div class="absolute inset-0 tread flex flex-col items-center justify-center gap-4 text-center p-8">
+          <svg class="text-brandlite" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-5.5-7-11a7 7 0 1 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+          <p class="font-disp font-bold uppercase text-[22px] tracking-wide">1605 W Front St, Selma</p>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Camacho+Tires,+1605+W+Front+St,+Selma,+CA+93662" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-brand hover:bg-brand-deep text-white font-bold text-[14px] px-5 py-2.5 rounded-md transition-colors">Open in Google Maps</a>
+        </div>
+        <iframe
+          title="Map to Camacho Tires, 1605 W Front St, Selma, CA"
+          src="https://www.google.com/maps?q=1605%20W%20Front%20St%2C%20Selma%2C%20CA%2093662&output=embed"
+          class="relative w-full h-full min-h-[380px] grayscale-[35%] contrast-[1.05]"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= BIG CTA ======= -->
+  <section class="relative tread hero-glow border-t border-line">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-20 sm:py-24 text-center">
+      <h2 class="reveal font-disp italic font-extrabold uppercase text-[clamp(44px,7vw,80px)] leading-[0.95] tracking-tight">Need tires <span class="text-brand">today?</span></h2>
+      <p class="reveal d1 text-smoke mt-5 max-w-xl mx-auto text-[16px]">One call and we'll check stock in your size. In and out — usually while you wait.</p>
+      <div class="reveal d2 mt-9">
+        <a href="tel:+15598980870" class="inline-flex items-center gap-3 bg-brand hover:bg-brand-deep text-white font-bold px-9 py-5 rounded-md text-lg transition-colors">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg>
+          Call (559) 898-0870
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="border-t border-line">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-5 text-[14px] text-smoke">
+      <div class="flex items-center gap-2.5">
+        <svg width="26" height="26" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <circle cx="20" cy="20" r="17" stroke="#F4F1EA" stroke-width="3.5"/>
+          <circle cx="20" cy="20" r="6.5" fill="#C2272D"/>
+        </svg>
+        <span class="font-disp italic font-bold uppercase tracking-wide text-[18px]"><span class="text-brand">Camacho</span> <span class="text-gold">Tires</span></span>
+      </div>
+      <p>1605 W Front St, Selma, CA 93662 · <a href="tel:+15598980870" class="hover:text-bone">(559) 898-0870</a></p>
+      <a href="https://www.instagram.com/camachotireselma/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 hover:text-bone transition-colors">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg>
+        @camachotireselma
+      </a>
+    </div>
+    <div class="border-t border-line">
+      <p class="max-w-7xl mx-auto px-4 sm:px-6 pt-4 pb-24 sm:pb-4 text-[12.5px] text-smoke/70">© 2026 Camacho Tires · Family owned &amp; operated in Selma, California</p>
+    </div>
+  </footer>
+
+  <!-- mobile sticky call bar -->
+  <div class="sm:hidden fixed bottom-0 inset-x-0 z-50 p-3 bg-gradient-to-t from-ink via-ink/95 to-transparent">
+    <a href="tel:+15598980870" class="flex items-center justify-center gap-2.5 bg-brand text-white font-bold py-4 rounded-lg text-[16px] shadow-lg shadow-brand/20">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg>
+      Call Camacho Tires
+    </a>
+  </div>
+
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
