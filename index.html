@@ -453,6 +453,115 @@
         <figcaption class="mt-6 pt-5 border-t border-line text-[13px] text-smoke">Google review</figcaption>
       </figure>
     </div>
+
+    <!-- quick review tool -->
+    <div class="reveal mt-10 bg-coal border border-line rounded-2xl px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="text-center md:text-left">
+        <h3 class="font-disp italic font-bold uppercase text-[26px] tracking-wide leading-tight">Did we treat you right?</h3>
+        <p class="text-smoke text-[15px] mt-1">A quick Google review takes 20 seconds and helps our family shop more than you know.</p>
+      </div>
+      <div class="flex flex-col items-center gap-2 shrink-0">
+        <a href="https://search.google.com/local/writereview?placeid=ChIJJ_A_nP3vlIARQuVS7dfoOKE" target="_blank" rel="noopener"
+           class="group inline-flex items-center gap-3 bg-gold hover:bg-gold-deep text-ink font-bold px-7 py-4 rounded-md text-base transition-colors">
+          <span class="tracking-widest text-[18px] leading-none" aria-hidden="true">★★★★★</span>
+          Rate us on Google
+        </a>
+        <a href="#" data-sms="Hi Camacho Tires — I visited recently and wanted to share some feedback: " class="sms-link text-[13px] text-smoke hover:text-bone underline underline-offset-2">Something off? Text us directly instead</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= BOOK & QUOTE ======= -->
+  <section id="book" class="bg-coal border-t border-line tread">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-20 sm:py-28">
+      <div class="reveal text-center mb-12 sm:mb-16">
+        <p class="text-gold font-semibold uppercase tracking-[0.2em] text-[13px] mb-3">Book &amp; Quote</p>
+        <h2 class="font-disp italic font-extrabold uppercase text-[clamp(38px,6vw,64px)] leading-[0.95] tracking-tight">Skip the wait —<br/>text us ahead</h2>
+        <p class="text-smoke text-[15px] mt-4 max-w-xl mx-auto">Fill this out and it opens a ready-to-send text to the shop. Hit send, and we'll reply to confirm. Prefer to talk? <a href="tel:+15598980870" class="text-gold font-semibold hover:underline">Call (559) 898-0870</a>.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <!-- schedule -->
+        <form id="bookForm" class="reveal bg-ink border border-line rounded-2xl p-7 sm:p-9" novalidate>
+          <h3 class="font-disp italic font-bold uppercase text-[26px] tracking-wide mb-6">Schedule a visit</h3>
+          <div class="space-y-4">
+            <div>
+              <label for="bk-name" class="block text-[12.5px] uppercase tracking-wider text-smoke mb-1.5">Your name</label>
+              <input id="bk-name" required type="text" autocomplete="name" class="w-full bg-steel border border-line rounded-md px-4 py-3 text-[15px] outline-none focus:border-brand transition-colors" placeholder="First name" />
+            </div>
+            <div>
+              <label for="bk-service" class="block text-[12.5px] uppercase tracking-wider text-smoke mb-1.5">What do you need?</label>
+              <select id="bk-service" required class="w-full bg-steel border border-line rounded-md px-4 py-3 text-[15px] outline-none focus:border-brand transition-colors">
+                <option value="">Choose a service…</option>
+                <option>New tires</option><option>Used tires</option><option>Mount &amp; balance</option>
+                <option>Flat repair</option><option>Wheel alignment</option><option>Oil change</option>
+                <option>Brakes / mechanic work</option><option>Not sure — take a look</option>
+              </select>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label for="bk-date" class="block text-[12.5px] uppercase tracking-wider text-smoke mb-1.5">Day</label>
+                <input id="bk-date" required type="date" class="w-full bg-steel border border-line rounded-md px-4 py-3 text-[15px] outline-none focus:border-brand transition-colors" />
+              </div>
+              <div>
+                <label for="bk-time" class="block text-[12.5px] uppercase tracking-wider text-smoke mb-1.5">Time</label>
+                <select id="bk-time" required class="w-full bg-steel border border-line rounded-md px-4 py-3 text-[15px] outline-none focus:border-brand transition-colors">
+                  <option value="">Select…</option>
+                  <option>7–9 AM</option><option>9–11 AM</option><option>11 AM–1 PM</option>
+                  <option>1–3 PM</option><option>3–5 PM</option>
+                </select>
+              </div>
+            </div>
+            <p id="bk-error" class="hidden text-brandlite text-[13.5px] font-medium"></p>
+            <button type="submit" class="w-full inline-flex items-center justify-center gap-2.5 bg-brand hover:bg-brand-deep text-white font-bold px-7 py-4 rounded-md text-base transition-colors">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.5 0-3-.4-4.2-1L3 20l1.1-4.1A8.5 8.5 0 1 1 21 11.5Z"/></svg>
+              Text us this appointment
+            </button>
+            <p id="bk-done" class="hidden text-gold text-[13.5px] font-medium">Your messages app should open — just hit send and we'll text back to confirm.</p>
+          </div>
+        </form>
+
+        <!-- quote -->
+        <form id="quoteForm" class="reveal d1 bg-ink border border-line rounded-2xl p-7 sm:p-9" novalidate>
+          <h3 class="font-disp italic font-bold uppercase text-[26px] tracking-wide mb-6">Get a quote</h3>
+          <div class="space-y-4">
+            <div class="grid grid-cols-3 gap-4">
+              <div>
+                <label for="qt-year" class="block text-[12.5px] uppercase tracking-wider text-smoke mb-1.5">Year</label>
+                <input id="qt-year" required type="text" inputmode="numeric" maxlength="4" class="w-full bg-steel border border-line rounded-md px-4 py-3 text-[15px] outline-none focus:border-brand transition-colors" placeholder="2018" />
+              </div>
+              <div class="col-span-2">
+                <label for="qt-make" class="block text-[12.5px] uppercase tracking-wider text-smoke mb-1.5">Make &amp; model</label>
+                <input id="qt-make" required type="text" class="w-full bg-steel border border-line rounded-md px-4 py-3 text-[15px] outline-none focus:border-brand transition-colors" placeholder="Chevy Silverado 1500" />
+              </div>
+            </div>
+            <div>
+              <label for="qt-size" class="block text-[12.5px] uppercase tracking-wider text-smoke mb-1.5">Tire size <span class="normal-case text-smoke/70">(optional — printed on your tire's sidewall)</span></label>
+              <input id="qt-size" type="text" class="w-full bg-steel border border-line rounded-md px-4 py-3 text-[15px] outline-none focus:border-brand transition-colors" placeholder="265/70R17" />
+            </div>
+            <div>
+              <label for="qt-service" class="block text-[12.5px] uppercase tracking-wider text-smoke mb-1.5">What are you looking for?</label>
+              <select id="qt-service" required class="w-full bg-steel border border-line rounded-md px-4 py-3 text-[15px] outline-none focus:border-brand transition-colors">
+                <option value="">Choose one…</option>
+                <option>New tires (full set)</option><option>New tires (pair / single)</option>
+                <option>Used tires</option><option>Mount &amp; balance only</option>
+                <option>Alignment</option><option>Other / explain by text</option>
+              </select>
+            </div>
+            <div>
+              <label for="qt-name" class="block text-[12.5px] uppercase tracking-wider text-smoke mb-1.5">Your name</label>
+              <input id="qt-name" required type="text" autocomplete="name" class="w-full bg-steel border border-line rounded-md px-4 py-3 text-[15px] outline-none focus:border-brand transition-colors" placeholder="First name" />
+            </div>
+            <p id="qt-error" class="hidden text-brandlite text-[13.5px] font-medium"></p>
+            <button type="submit" class="w-full inline-flex items-center justify-center gap-2.5 bg-brand hover:bg-brand-deep text-white font-bold px-7 py-4 rounded-md text-base transition-colors">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.5 0-3-.4-4.2-1L3 20l1.1-4.1A8.5 8.5 0 1 1 21 11.5Z"/></svg>
+              Text us for a quote
+            </button>
+            <p id="qt-done" class="hidden text-gold text-[13.5px] font-medium">Your messages app should open — hit send and we'll reply with your price.</p>
+          </div>
+        </form>
+      </div>
+    </div>
   </section>
 
   <!-- ======= VISIT / CONTACT ======= -->
@@ -556,10 +665,16 @@
 
   <!-- mobile sticky call bar -->
   <div class="sm:hidden fixed bottom-0 inset-x-0 z-50 p-3 bg-gradient-to-t from-ink via-ink/95 to-transparent">
-    <a href="tel:+15598980870" class="flex items-center justify-center gap-2.5 bg-brand text-white font-bold py-4 rounded-lg text-[16px] shadow-lg shadow-brand/20">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="ring-anim"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg>
-      Call Camacho Tires
-    </a>
+    <div class="flex gap-2.5">
+      <a href="tel:+15598980870" class="flex-1 flex items-center justify-center gap-2.5 bg-brand text-white font-bold py-4 rounded-lg text-[16px] shadow-lg shadow-brand/20">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="ring-anim"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg>
+        Call
+      </a>
+      <a href="#book" class="flex-1 flex items-center justify-center gap-2.5 bg-ink border border-line text-bone font-bold py-4 rounded-lg text-[16px]">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
+        Book
+      </a>
+    </div>
   </div>
 
   <script>
@@ -591,28 +706,82 @@
       };
 
       const loader = document.getElementById('loader');
-      if (!loader) return startReveals();
-
       let seen = false;
       try { seen = !!sessionStorage.getItem('camachoLoader'); } catch (e) {}
-      if (seen) { loader.remove(); startReveals(); return; }
 
-      document.documentElement.style.overflow = 'hidden';
-      const finish = () => {
-        try { sessionStorage.setItem('camachoLoader', '1'); } catch (e) {}
-        loader.classList.add('hide');
-        document.documentElement.style.overflow = '';
+      if (!loader || seen) {
+        if (loader) loader.remove();
         startReveals();
-        setTimeout(() => loader.remove(), 600);
+      } else {
+        document.documentElement.style.overflow = 'hidden';
+        const finish = () => {
+          try { sessionStorage.setItem('camachoLoader', '1'); } catch (e) {}
+          loader.classList.add('hide');
+          document.documentElement.style.overflow = '';
+          startReveals();
+          setTimeout(() => loader.remove(), 600);
+        };
+        const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const minTime = new Promise(r => setTimeout(r, reduced ? 600 : 2100));
+        const loaded = document.readyState === 'complete'
+          ? Promise.resolve()
+          : new Promise(r => window.addEventListener('load', r, { once: true }));
+        // never trap the visitor on the loader, even if an asset hangs
+        Promise.race([Promise.all([minTime, loaded]), new Promise(r => setTimeout(r, 5000))]).then(finish);
+      }
+
+      /* ===== text-message booking, quotes & feedback ===== */
+      const SMS_NUM = '+15598980870';
+      const smsHref = (body) => {
+        const ios = /iPhone|iPad|iPod/.test(navigator.userAgent);
+        return 'sms:' + SMS_NUM + (ios ? '&' : '?') + 'body=' + encodeURIComponent(body);
+      };
+      document.querySelectorAll('.sms-link').forEach(a => {
+        a.addEventListener('click', (ev) => { ev.preventDefault(); window.location.href = smsHref(a.dataset.sms); });
+      });
+
+      const wireForm = (formId, errId, doneId, buildBody) => {
+        const form = document.getElementById(formId);
+        if (!form) return;
+        const err = document.getElementById(errId), done = document.getElementById(doneId);
+        form.addEventListener('submit', (ev) => {
+          ev.preventDefault();
+          err.classList.add('hidden'); done.classList.add('hidden');
+          const missing = Array.from(form.querySelectorAll('[required]')).filter(f => !f.value.trim());
+          if (missing.length) {
+            err.textContent = 'Please fill in: ' + missing.map(f => form.querySelector('label[for="' + f.id + '"]').textContent.split('(')[0].trim().toLowerCase()).join(', ');
+            err.classList.remove('hidden'); missing[0].focus(); return;
+          }
+          const custom = buildBody(form);
+          if (typeof custom === 'string' && custom.startsWith('ERROR:')) {
+            err.textContent = custom.slice(6); err.classList.remove('hidden'); return;
+          }
+          done.classList.remove('hidden');
+          window.location.href = smsHref(custom);
+        });
       };
 
-      const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const minTime = new Promise(r => setTimeout(r, reduced ? 600 : 2100));
-      const loaded = document.readyState === 'complete'
-        ? Promise.resolve()
-        : new Promise(r => window.addEventListener('load', r, { once: true }));
-      // never trap the visitor on the loader, even if an asset hangs
-      Promise.race([Promise.all([minTime, loaded]), new Promise(r => setTimeout(r, 5000))]).then(finish);
+      const val = (id) => document.getElementById(id).value.trim();
+
+      const bkDate = document.getElementById('bk-date');
+      if (bkDate) bkDate.min = new Date().toISOString().slice(0, 10);
+
+      wireForm('bookForm', 'bk-error', 'bk-done', () => {
+        const d = new Date(val('bk-date') + 'T12:00');
+        if (isNaN(d)) return 'ERROR:That date doesn\'t look right — please re-pick the day.';
+        if (d.getDay() === 0) return 'ERROR:We\'re closed Sundays — pick any day Mon–Sat and we\'ll get you in.';
+        const day = d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+        return 'Hi Camacho Tires! I\'d like to book a visit.\nName: ' + val('bk-name') +
+               '\nService: ' + val('bk-service') + '\nWhen: ' + day + ', ' + val('bk-time') +
+               '\n(Sent from camachotires website)';
+      });
+
+      wireForm('quoteForm', 'qt-error', 'qt-done', () => {
+        return 'Hi Camacho Tires! Quote request:\nName: ' + val('qt-name') +
+               '\nVehicle: ' + val('qt-year') + ' ' + val('qt-make') +
+               (val('qt-size') ? '\nTire size: ' + val('qt-size') : '') +
+               '\nLooking for: ' + val('qt-service') + '\n(Sent from camachotires website)';
+      });
     })();
   </script>
 </body>
