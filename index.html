@@ -72,7 +72,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .slow-spin, .ring-anim, .marquee { animation: none; }
+      .slow-spin, .ring-anim, .marquee, .marquee-slow { animation: none; }
       .skid-draw { clip-path: none; transition: none; }
     }
 
@@ -97,6 +97,12 @@
     @keyframes slide { from { transform: translateX(0) } to { transform: translateX(-50%) } }
     .marquee { animation: slide 28s linear infinite; }
     .marquee:hover { animation-play-state: paused; }
+
+    /* work gallery film strip */
+    .marquee-slow { animation: slide 55s linear infinite; }
+    .marquee-slow:hover { animation-play-state: paused; }
+    .work-card { transition: transform .5s cubic-bezier(.2,.7,.3,1), filter .5s ease, box-shadow .5s ease; }
+    .work-card:hover { transform: rotate(0deg) scale(1.05) !important; filter: grayscale(0) !important; box-shadow: 0 24px 60px -18px rgba(224,34,39,0.45); z-index: 5; }
 
     .ticket { border-left: 3px solid #E02227; }
 
@@ -205,6 +211,7 @@
       <div class="hidden lg:flex items-center gap-9 text-[15px] font-medium text-smoke">
         <a href="#services" class="hover:text-bone transition-colors">Services</a>
         <a href="#why" class="hover:text-bone transition-colors">Why Us</a>
+        <a href="#work" class="hover:text-bone transition-colors">Our Work</a>
         <a href="#reviews" class="hover:text-bone transition-colors">Reviews</a>
         <a href="#book" class="hover:text-bone transition-colors">Book &amp; Quote</a>
         <a href="#visit" class="hover:text-bone transition-colors">Find Us</a>
@@ -415,6 +422,66 @@
     </div>
   </section>
 
+  <!-- ======= OUR WORK ======= -->
+  <section id="work" class="py-20 sm:py-28 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-12 sm:mb-14 flex flex-wrap items-end justify-between gap-6">
+      <div>
+        <p class="reveal text-gold font-semibold uppercase tracking-[0.2em] text-[13px] mb-3">Our work</p>
+        <h2 class="reveal d1 font-disp italic font-extrabold uppercase text-[clamp(38px,6vw,64px)] leading-[0.95] tracking-tight">Straight from<br/>the shop floor</h2>
+      </div>
+      <p class="reveal d2 text-smoke max-w-sm text-[15px] leading-relaxed">Real jobs, real cars, no stock photos. Hover over a shot — the strip keeps rolling on its own.</p>
+    </div>
+
+    <div class="reveal d2 relative">
+      <div class="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-32 z-10 bg-gradient-to-r from-ink to-transparent"></div>
+      <div class="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-32 z-10 bg-gradient-to-l from-ink to-transparent"></div>
+      <div class="marquee-slow flex gap-6 w-max py-6">
+        <!-- set 1 -->
+        <figure class="work-card relative shrink-0 w-[250px] sm:w-[290px] rotate-[1.6deg] bg-coal border border-line rounded-xl p-3 grayscale-[55%]">
+          <img src="photos/work-1.jpg" onerror="this.onerror=null;this.src='https://placehold.co/520x640/1D1D23/5C616B?text=work-1.jpg'" alt="Lifted Ram 1500 on fresh tires in front of Camacho Tires" loading="lazy" class="w-full h-[300px] sm:h-[340px] object-cover rounded-lg" />
+          <figcaption class="pt-3 pb-1 px-1 font-disp italic font-semibold uppercase tracking-wide text-[15px] text-bone/90">Fresh set, mounted &amp; balanced</figcaption>
+        </figure>
+        <figure class="work-card relative shrink-0 w-[250px] sm:w-[290px] -rotate-[2deg] bg-coal border border-line rounded-xl p-3 grayscale-[55%]">
+          <img src="photos/work-2.jpg" onerror="this.onerror=null;this.src='https://placehold.co/520x640/1D1D23/5C616B?text=work-2.jpg'" alt="Toyota Land Cruiser with new wheels at Camacho Tires" loading="lazy" class="w-full h-[300px] sm:h-[340px] object-cover rounded-lg" />
+          <figcaption class="pt-3 pb-1 px-1 font-disp italic font-semibold uppercase tracking-wide text-[15px] text-bone/90">New shoes on new wheels</figcaption>
+        </figure>
+        <figure class="work-card relative shrink-0 w-[250px] sm:w-[290px] rotate-[1.2deg] bg-coal border border-line rounded-xl p-3 grayscale-[55%]">
+          <img src="photos/work-3.jpg" onerror="this.onerror=null;this.src='https://placehold.co/520x640/1D1D23/5C616B?text=work-3.jpg'" alt="Chevy Colorado on new mud-terrain tires at Camacho Tires" loading="lazy" class="w-full h-[300px] sm:h-[340px] object-cover rounded-lg" />
+          <figcaption class="pt-3 pb-1 px-1 font-disp italic font-semibold uppercase tracking-wide text-[15px] text-bone/90">Mud terrains, ready to work</figcaption>
+        </figure>
+        <figure class="work-card relative shrink-0 w-[250px] sm:w-[290px] -rotate-[1.4deg] bg-coal border border-line rounded-xl p-3 grayscale-[55%]">
+          <img src="photos/work-4.jpg" onerror="this.onerror=null;this.src='https://placehold.co/520x640/1D1D23/5C616B?text=work-4.jpg'" alt="Classic car on the Hunter alignment rack inside Camacho Tires" loading="lazy" class="w-full h-[300px] sm:h-[340px] object-cover rounded-lg" />
+          <figcaption class="pt-3 pb-1 px-1 font-disp italic font-semibold uppercase tracking-wide text-[15px] text-bone/90">Alignment dialed in</figcaption>
+        </figure>
+        <figure class="work-card relative shrink-0 w-[250px] sm:w-[290px] rotate-[2deg] bg-coal border border-line rounded-xl p-3 grayscale-[55%]">
+          <img src="photos/work-5.jpg" onerror="this.onerror=null;this.src='https://placehold.co/520x640/1D1D23/5C616B?text=work-5.jpg'" alt="Classic '57 Chevy Bel Air at the original Camacho Tire Service" loading="lazy" class="w-full h-[300px] sm:h-[340px] object-cover rounded-lg" />
+          <figcaption class="pt-3 pb-1 px-1 font-disp italic font-semibold uppercase tracking-wide text-[15px] text-bone/90">Classics done right since day one</figcaption>
+        </figure>
+        <!-- set 2 (loop copy) -->
+        <figure class="work-card relative shrink-0 w-[250px] sm:w-[290px] rotate-[1.6deg] bg-coal border border-line rounded-xl p-3 grayscale-[55%]" aria-hidden="true">
+          <img src="photos/work-1.jpg" onerror="this.onerror=null;this.src='https://placehold.co/520x640/1D1D23/5C616B?text=work-1.jpg'" alt="" loading="lazy" class="w-full h-[300px] sm:h-[340px] object-cover rounded-lg" />
+          <figcaption class="pt-3 pb-1 px-1 font-disp italic font-semibold uppercase tracking-wide text-[15px] text-bone/90">Fresh set, mounted &amp; balanced</figcaption>
+        </figure>
+        <figure class="work-card relative shrink-0 w-[250px] sm:w-[290px] -rotate-[2deg] bg-coal border border-line rounded-xl p-3 grayscale-[55%]" aria-hidden="true">
+          <img src="photos/work-2.jpg" onerror="this.onerror=null;this.src='https://placehold.co/520x640/1D1D23/5C616B?text=work-2.jpg'" alt="" loading="lazy" class="w-full h-[300px] sm:h-[340px] object-cover rounded-lg" />
+          <figcaption class="pt-3 pb-1 px-1 font-disp italic font-semibold uppercase tracking-wide text-[15px] text-bone/90">New shoes on new wheels</figcaption>
+        </figure>
+        <figure class="work-card relative shrink-0 w-[250px] sm:w-[290px] rotate-[1.2deg] bg-coal border border-line rounded-xl p-3 grayscale-[55%]" aria-hidden="true">
+          <img src="photos/work-3.jpg" onerror="this.onerror=null;this.src='https://placehold.co/520x640/1D1D23/5C616B?text=work-3.jpg'" alt="" loading="lazy" class="w-full h-[300px] sm:h-[340px] object-cover rounded-lg" />
+          <figcaption class="pt-3 pb-1 px-1 font-disp italic font-semibold uppercase tracking-wide text-[15px] text-bone/90">Mud terrains, ready to work</figcaption>
+        </figure>
+        <figure class="work-card relative shrink-0 w-[250px] sm:w-[290px] -rotate-[1.4deg] bg-coal border border-line rounded-xl p-3 grayscale-[55%]" aria-hidden="true">
+          <img src="photos/work-4.jpg" onerror="this.onerror=null;this.src='https://placehold.co/520x640/1D1D23/5C616B?text=work-4.jpg'" alt="" loading="lazy" class="w-full h-[300px] sm:h-[340px] object-cover rounded-lg" />
+          <figcaption class="pt-3 pb-1 px-1 font-disp italic font-semibold uppercase tracking-wide text-[15px] text-bone/90">Alignment dialed in</figcaption>
+        </figure>
+        <figure class="work-card relative shrink-0 w-[250px] sm:w-[290px] rotate-[2deg] bg-coal border border-line rounded-xl p-3 grayscale-[55%]" aria-hidden="true">
+          <img src="photos/work-5.jpg" onerror="this.onerror=null;this.src='https://placehold.co/520x640/1D1D23/5C616B?text=work-5.jpg'" alt="" loading="lazy" class="w-full h-[300px] sm:h-[340px] object-cover rounded-lg" />
+          <figcaption class="pt-3 pb-1 px-1 font-disp italic font-semibold uppercase tracking-wide text-[15px] text-bone/90">Classics done right since day one</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <!-- ======= BRANDS ======= -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
     <div class="reveal grid md:grid-cols-[1fr_auto] gap-8 items-center bg-coal border border-line rounded-2xl px-8 sm:px-12 py-10">
@@ -493,10 +560,21 @@
               <label for="bk-service" class="block text-[12.5px] uppercase tracking-wider text-smoke mb-1.5">What do you need?</label>
               <select id="bk-service" required class="w-full bg-steel border border-line rounded-md px-4 py-3 text-[15px] outline-none focus:border-brand transition-colors">
                 <option value="">Choose a service…</option>
-                <option>New tires</option><option>Used tires</option><option>Mount &amp; balance</option>
-                <option>Flat repair</option><option>Wheel alignment</option><option>Oil change</option>
-                <option>Brakes / mechanic work</option><option>Not sure — take a look</option>
+                <option>New &amp; used tires</option>
+                <option>Flat repair</option>
+                <option>Oil change</option>
+                <option>Wheel alignment</option>
               </select>
+            </div>
+            <div class="grid grid-cols-3 gap-4">
+              <div>
+                <label for="bk-year" class="block text-[12.5px] uppercase tracking-wider text-smoke mb-1.5">Year</label>
+                <input id="bk-year" required type="text" inputmode="numeric" maxlength="4" class="w-full bg-steel border border-line rounded-md px-4 py-3 text-[15px] outline-none focus:border-brand transition-colors" placeholder="2018" />
+              </div>
+              <div class="col-span-2">
+                <label for="bk-vehicle" class="block text-[12.5px] uppercase tracking-wider text-smoke mb-1.5">Make &amp; model</label>
+                <input id="bk-vehicle" required type="text" class="w-full bg-steel border border-line rounded-md px-4 py-3 text-[15px] outline-none focus:border-brand transition-colors" placeholder="Honda Civic" />
+              </div>
             </div>
             <div class="grid grid-cols-2 gap-4">
               <div>
@@ -772,6 +850,7 @@
         if (d.getDay() === 0) return 'ERROR:We\'re closed Sundays — pick any day Mon–Sat and we\'ll get you in.';
         const day = d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
         return 'Hi Camacho Tires! I\'d like to book a visit.\nName: ' + val('bk-name') +
+               '\nVehicle: ' + val('bk-year') + ' ' + val('bk-vehicle') +
                '\nService: ' + val('bk-service') + '\nWhen: ' + day + ', ' + val('bk-time') +
                '\n(Sent from camachotires website)';
       });
