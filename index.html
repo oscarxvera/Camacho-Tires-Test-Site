@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Camacho Tires — Tires, Wheels & Auto Service in Selma, CA</title>
-  <meta name="description" content="Camacho Tires is Selma's family-owned tire shop. New & used tires, mount & balance, flat repair, alignments and oil changes — fast, fair and done right. Now at 1605 W Front St, Selma, CA. Call (559) 898-0870." />
+  <meta name="description" content="Camacho Tires is Selma's family-owned tire shop. New & used tires, mount & balance, flat repair, alignments and oil changes — fast, fair and done right. 1605 W Front St, Selma, CA. Call (559) 898-0870." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'><rect width='36' height='36' rx='8' fill='%230C0C0F'/><circle cx='18' cy='18' r='11' fill='none' stroke='%23F4F1EA' stroke-width='2.6'/><circle cx='18' cy='18' r='4.2' fill='%23C2272D'/><path d='M18 7v6M28.5 14.6l-5.7 1.9M24.5 27.1 21 22.2M11.5 27.1l3.5-4.9M7.5 14.6l5.7 1.9' stroke='%23C2272D' stroke-width='2.4' stroke-linecap='round'/></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'><rect width='36' height='36' rx='8' fill='%230C0C0F'/><circle cx='18' cy='18' r='11' fill='none' stroke='%23F4F1EA' stroke-width='2.6'/><circle cx='18' cy='18' r='4.2' fill='%23E02227'/><path d='M18 7v6M28.5 14.6l-5.7 1.9M24.5 27.1 21 22.2M11.5 27.1l3.5-4.9M7.5 14.6l5.7 1.9' stroke='%23E02227' stroke-width='2.4' stroke-linecap='round'/></svg>" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -19,9 +19,9 @@
             coal:  '#141418',
             steel: '#1D1D23',
             line:  '#2A2A33',
-            brand: { DEFAULT: '#C2272D', deep: '#9A1B20' },
-            gold:  { DEFAULT: '#F2B92E', deep: '#D99E14' },
-            brandlite: '#E25B60',
+            brand: { DEFAULT: '#E02227', deep: '#B5161C' },
+            gold:  { DEFAULT: '#FBB41E', deep: '#DC9A10' },
+            brandlite: '#F2555A',
             bone:  '#F4F1EA',
             smoke: '#A3A3AD',
           },
@@ -35,12 +35,45 @@
   </script>
   <style>
     body { font-family: Inter, sans-serif; background: #0C0C0F; }
-    ::selection { background: #C2272D; color: #F4F1EA; }
+    ::selection { background: #E02227; color: #F4F1EA; }
 
     /* sign-style wordmark: red letters, white outline, hard shadow */
     .logo-word {
-      -webkit-text-stroke: 0.5px rgba(244,241,234,0.9);
+      -webkit-text-stroke: 0.6px rgba(255,255,255,0.95);
       text-shadow: 2px 2px 0 rgba(0,0,0,0.65);
+    }
+    /* tread imprint strip under the wordmark, like the logo's skid mark */
+    .logo-skid {
+      background:
+        repeating-linear-gradient(90deg, rgba(244,241,234,0.55) 0 3px, transparent 3px 7px),
+        repeating-linear-gradient(90deg, transparent 0 2px, rgba(244,241,234,0.25) 2px 5px, transparent 5px 9px);
+      background-size: 100% 45%, 100% 45%;
+      background-position: 0 0, 2px 100%;
+      background-repeat: repeat-x;
+      border-radius: 1px;
+    }
+
+    /* hero ghost wheel: slow constant rotation */
+    .slow-spin { animation: slow-spin 70s linear infinite; transform-origin: 50% 50%; }
+    @keyframes slow-spin { to { transform: rotate(360deg); } }
+
+    /* hero skid mark wipes in from the left when revealed */
+    .skid-draw { clip-path: inset(0 100% 0 0); transition: clip-path 1.1s cubic-bezier(.25,.6,.35,1) .35s; }
+    .skid-draw.in { clip-path: inset(0 0 0 0); }
+
+    /* phone icons give a little ring every few seconds */
+    .ring-anim { animation: ring 3.4s ease-in-out infinite; transform-origin: 50% 50%; }
+    @keyframes ring {
+      0%, 86%, 100% { transform: rotate(0); }
+      89% { transform: rotate(13deg); }
+      92% { transform: rotate(-11deg); }
+      95% { transform: rotate(8deg); }
+      98% { transform: rotate(-5deg); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .slow-spin, .ring-anim, .marquee { animation: none; }
+      .skid-draw { clip-path: none; transition: none; }
     }
 
     /* tread pattern */
@@ -49,10 +82,10 @@
     }
     .hero-glow {
       background:
-        radial-gradient(900px 480px at 78% 18%, rgba(194,39,45,0.18), transparent 62%),
-        radial-gradient(700px 420px at 8% 92%, rgba(242,185,46,0.06), transparent 60%);
+        radial-gradient(900px 480px at 78% 18%, rgba(224,34,39,0.18), transparent 62%),
+        radial-gradient(700px 420px at 8% 92%, rgba(251,180,30,0.06), transparent 60%);
     }
-    .card-glow:hover { box-shadow: 0 18px 50px -18px rgba(194,39,45,0.35); }
+    .card-glow:hover { box-shadow: 0 18px 50px -18px rgba(224,34,39,0.35); }
 
     /* reveal on scroll */
     .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1); }
@@ -63,17 +96,95 @@
     /* marquee */
     @keyframes slide { from { transform: translateX(0) } to { transform: translateX(-50%) } }
     .marquee { animation: slide 28s linear infinite; }
+    .marquee:hover { animation-play-state: paused; }
 
-    .ticket { border-left: 3px solid #C2272D; }
+    .ticket { border-left: 3px solid #E02227; }
+
+    /* ===== loading screen ===== */
+    /* styled without Tailwind classes so it renders before the CDN script runs */
+    #loader {
+      position: fixed; inset: 0; z-index: 100; background: #0C0C0F;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 44px; transition: opacity .5s ease;
+    }
+    #loader.hide { opacity: 0; pointer-events: none; }
+    #loader .l-logo { display: flex; flex-direction: column; line-height: 1; }
+    #loader .l-word {
+      display: flex; align-items: center;
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
+      text-transform: uppercase; font-size: 46px; color: #E02227;
+      -webkit-text-stroke: 0.7px rgba(255,255,255,0.95);
+      text-shadow: 2.5px 2.5px 0 rgba(0,0,0,0.65);
+    }
+    #loader .l-word svg { margin-left: 3px; }
+    #loader .l-sub { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
+    #loader .l-sk {
+      flex: 1; height: 8px; border-radius: 1px;
+      background:
+        repeating-linear-gradient(90deg, rgba(244,241,234,0.5) 0 3px, transparent 3px 7px),
+        repeating-linear-gradient(90deg, transparent 0 2px, rgba(244,241,234,0.22) 2px 5px, transparent 5px 9px);
+      background-size: 100% 45%, 100% 45%;
+      background-position: 0 0, 2px 100%;
+      background-repeat: repeat-x;
+    }
+    #loader .l-tires {
+      font-family: 'Barlow Condensed', sans-serif; font-style: italic; font-weight: 700;
+      text-transform: uppercase; font-size: 18px; letter-spacing: 0.42em; color: #FBB41E;
+    }
+    #loader .l-track { position: relative; width: 300px; height: 48px; }
+    #loader .l-skid {
+      position: absolute; left: 0; bottom: 7px; height: 9px; width: 0;
+      transform: skewX(-18deg); border-radius: 2px;
+      background: repeating-linear-gradient(100deg, rgba(244,241,234,0.55) 0 8px, transparent 8px 15px);
+      animation: skid-grow 1.5s cubic-bezier(.25,.6,.35,1) .2s forwards;
+    }
+    #loader .l-tire { position: absolute; left: 0; bottom: 0; width: 46px; height: 46px; animation: tire-roll 1.5s cubic-bezier(.25,.6,.35,1) .2s forwards; }
+    #loader .l-tire svg { display: block; width: 100%; height: 100%; animation: tire-spin .55s linear infinite; }
+    @keyframes tire-roll { to { transform: translateX(254px); } }
+    @keyframes skid-grow { to { width: 254px; } }
+    @keyframes tire-spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) {
+      #loader .l-skid, #loader .l-tire, #loader .l-tire svg { animation: none; }
+      #loader .l-skid { width: 254px; }
+      #loader .l-tire { transform: translateX(254px); }
+    }
     .num-ghost { -webkit-text-stroke: 1px rgba(244,241,234,0.22); color: transparent; }
   </style>
 </head>
 <body class="bg-ink text-bone antialiased overflow-x-hidden">
 
+  <!-- ======= LOADING SCREEN ======= -->
+  <div id="loader" aria-hidden="true">
+    <div class="l-logo">
+      <span class="l-word">CAMACH<svg width="42" height="42" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" fill="#0B0B0D"/><circle cx="20" cy="20" r="16.4" stroke="#3A3A42" stroke-width="2.2" stroke-dasharray="3 4"/><circle cx="20" cy="20" r="13" fill="#101013" stroke="#F4F1EA" stroke-width="1.8"/><circle cx="20" cy="20" r="10.4" stroke="#E02227" stroke-width="2"/><g stroke="#E02227" stroke-width="3.4" stroke-linecap="round"><line x1="20" y1="20" x2="20" y2="10.8"/><line x1="20" y1="20" x2="28.8" y2="17.2"/><line x1="20" y1="20" x2="25.4" y2="27.5"/><line x1="20" y1="20" x2="14.6" y2="27.5"/><line x1="20" y1="20" x2="11.2" y2="17.2"/></g><circle cx="20" cy="20" r="4.6" fill="#D7DAE0"/><circle cx="20" cy="20" r="1.9" fill="#5C616B"/></svg></span>
+      <span class="l-sub"><span class="l-sk"></span><span class="l-tires">Tires</span></span>
+    </div>
+    <div class="l-track">
+      <div class="l-skid"></div>
+      <div class="l-tire">
+        <svg viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="18" fill="#101013"/>
+          <circle cx="20" cy="20" r="17.2" stroke="#F4F1EA" stroke-width="1.6" stroke-dasharray="3.5 5" stroke-linecap="round"/>
+          <circle cx="20" cy="20" r="12.5" stroke="#F4F1EA" stroke-width="2"/>
+          <circle cx="20" cy="20" r="10.2" stroke="#E02227" stroke-width="1.8"/>
+          <g stroke="#E02227" stroke-width="3" stroke-linecap="round">
+            <line x1="20" y1="20" x2="20" y2="11"/>
+            <line x1="20" y1="20" x2="28.6" y2="17.2"/>
+            <line x1="20" y1="20" x2="25.3" y2="27.3"/>
+            <line x1="20" y1="20" x2="14.7" y2="27.3"/>
+            <line x1="20" y1="20" x2="11.4" y2="17.2"/>
+          </g>
+          <circle cx="20" cy="20" r="4.4" fill="#D7DAE0"/>
+          <circle cx="20" cy="20" r="1.8" fill="#5C616B"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
   <!-- ======= TOP BAR ======= -->
   <div class="bg-brand text-white text-[13px] font-semibold">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex items-center justify-between gap-3">
-      <p class="truncate"><span class="font-bold uppercase tracking-wide">We moved!</span> Visit us at our new shop — 1605 W Front St, Selma</p>
+      <p class="truncate">1605 W Front St, Selma, CA 93662</p>
       <div class="hidden md:flex items-center gap-5 shrink-0">
         <span>Mon–Fri 7 AM–6 PM · Sat 7 AM–4 PM</span>
         <span class="font-bold">Se Habla Español</span>
@@ -84,9 +195,12 @@
   <!-- ======= NAV ======= -->
   <header class="sticky top-0 z-50 bg-ink/90 backdrop-blur border-b border-line">
     <nav class="max-w-7xl mx-auto px-4 sm:px-6 h-[72px] flex items-center justify-between">
-      <a href="#top" class="flex flex-col leading-none select-none" aria-label="Camacho Tires home">
-        <span class="logo-word flex items-center font-disp italic font-extrabold uppercase text-[30px] tracking-tight text-brand">CAMACH<svg class="ml-[2px]" width="25" height="25" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="#101013" stroke="#F4F1EA" stroke-width="3"/><g stroke="#C2272D" stroke-width="3.4" stroke-linecap="round"><line x1="20" y1="20" x2="20" y2="9.5"/><line x1="20" y1="20" x2="30" y2="16.8"/><line x1="20" y1="20" x2="26.2" y2="28.6"/><line x1="20" y1="20" x2="13.8" y2="28.6"/><line x1="20" y1="20" x2="10" y2="16.8"/></g><circle cx="20" cy="20" r="4.4" fill="#C2272D"/></svg></span>
-        <span class="self-end font-disp italic font-bold uppercase text-[13px] tracking-[0.42em] text-gold -mt-0.5 mr-0.5">Tires</span>
+      <a href="#top" class="flex flex-col leading-none select-none w-[148px]" aria-label="Camacho Tires home">
+        <span class="logo-word flex items-center font-disp font-extrabold uppercase text-[30px] tracking-tight text-brand">CAMACH<svg class="ml-[2px]" width="27" height="27" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#0B0B0D"/><circle cx="20" cy="20" r="16.4" stroke="#3A3A42" stroke-width="2.2" stroke-dasharray="3 4"/><circle cx="20" cy="20" r="13" fill="#101013" stroke="#F4F1EA" stroke-width="1.8"/><circle cx="20" cy="20" r="10.4" stroke="#E02227" stroke-width="2"/><g stroke="#E02227" stroke-width="3.4" stroke-linecap="round"><line x1="20" y1="20" x2="20" y2="10.8"/><line x1="20" y1="20" x2="28.8" y2="17.2"/><line x1="20" y1="20" x2="25.4" y2="27.5"/><line x1="20" y1="20" x2="14.6" y2="27.5"/><line x1="20" y1="20" x2="11.2" y2="17.2"/></g><circle cx="20" cy="20" r="4.6" fill="#D7DAE0"/><circle cx="20" cy="20" r="1.9" fill="#5C616B"/></svg></span>
+        <span class="flex items-center gap-1.5 mt-[3px]">
+          <span class="logo-skid flex-1 h-[7px]" aria-hidden="true"></span>
+          <span class="font-disp italic font-bold uppercase text-[13px] tracking-[0.3em] text-gold">Tires</span>
+        </span>
       </a>
       <div class="hidden lg:flex items-center gap-9 text-[15px] font-medium text-smoke">
         <a href="#services" class="hover:text-bone transition-colors">Services</a>
@@ -95,11 +209,11 @@
         <a href="#visit" class="hover:text-bone transition-colors">Find Us</a>
       </div>
       <a href="tel:+15598980870" class="hidden sm:inline-flex items-center gap-2.5 bg-brand hover:bg-brand-deep text-white font-bold text-[15px] px-5 py-2.5 rounded-md transition-colors">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="ring-anim"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg>
         (559) 898-0870
       </a>
       <a href="tel:+15598980870" class="sm:hidden inline-flex items-center justify-center w-11 h-11 rounded-md bg-brand text-white">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="ring-anim"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg>
       </a>
     </nav>
   </header>
@@ -107,7 +221,7 @@
   <!-- ======= HERO ======= -->
   <section id="top" class="relative tread hero-glow border-b border-line overflow-hidden">
     <!-- big tire graphic -->
-    <svg class="hidden md:block absolute -right-40 -bottom-44 w-[620px] h-[620px] opacity-[0.16] pointer-events-none select-none" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+    <svg class="slow-spin hidden md:block absolute -right-40 -bottom-44 w-[620px] h-[620px] opacity-[0.16] pointer-events-none select-none" viewBox="0 0 200 200" fill="none" aria-hidden="true">
       <circle cx="100" cy="100" r="92" stroke="#F4F1EA" stroke-width="13"/>
       <circle cx="100" cy="100" r="92" stroke="#0C0C0F" stroke-width="13" stroke-dasharray="7 11"/>
       <circle cx="100" cy="100" r="58" stroke="#F4F1EA" stroke-width="2.5"/>
@@ -122,20 +236,16 @@
 
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 pt-16 pb-20 sm:pt-24 sm:pb-28">
       <div class="max-w-3xl">
-        <div class="reveal inline-flex items-center gap-2 bg-steel border border-line rounded-full pl-1.5 pr-4 py-1.5 text-[13px] font-medium text-smoke mb-7">
-          <span class="bg-brand text-white text-[11px] font-bold uppercase tracking-wider rounded-full px-2.5 py-0.5">New Location</span>
-          Now open at 1605 W Front St, Selma
-        </div>
         <h1 class="reveal d1 font-disp italic font-extrabold uppercase leading-[0.95] text-[clamp(52px,9vw,104px)] tracking-tight">
           Selma's Family<br/>Tire Shop.<br/><span class="text-brand">In &amp; Out Fast.</span>
         </h1>
-        <div class="reveal d1 mt-7 h-3 w-72 max-w-full opacity-80" style="background: repeating-linear-gradient(100deg, rgba(244,241,234,0.85) 0 9px, transparent 9px 17px); transform: skewX(-18deg); border-radius: 2px;" aria-hidden="true"></div>
+        <div class="reveal d1 skid-draw mt-7 h-3 w-72 max-w-full opacity-80" style="background: repeating-linear-gradient(100deg, rgba(244,241,234,0.85) 0 9px, transparent 9px 17px); transform: skewX(-18deg); border-radius: 2px;" aria-hidden="true"></div>
         <p class="reveal d2 mt-7 text-[17px] sm:text-lg leading-relaxed text-smoke max-w-xl">
           New and used tires, mount &amp; balance, flat repair, alignments and oil changes — done right by a father-and-son crew that treats your car like their own. No appointments, no all-day waits.
         </p>
         <div class="reveal d3 mt-9 flex flex-wrap items-center gap-4">
           <a href="tel:+15598980870" class="inline-flex items-center gap-2.5 bg-brand hover:bg-brand-deep text-white font-bold px-7 py-4 rounded-md text-base transition-colors">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="ring-anim"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg>
             Call (559) 898-0870
           </a>
           <a href="#visit" class="inline-flex items-center gap-2.5 border border-line hover:border-brand text-bone font-semibold px-7 py-4 rounded-md text-base transition-colors">
@@ -148,11 +258,11 @@
         <dl class="reveal d4 mt-14 grid grid-cols-2 sm:grid-cols-4 gap-px bg-line border border-line rounded-lg overflow-hidden max-w-2xl">
           <div class="bg-coal px-5 py-4">
             <dt class="text-[12px] uppercase tracking-wider text-smoke">Google Rating</dt>
-            <dd class="font-disp font-bold text-[30px] leading-tight text-gold">4.8 ★</dd>
+            <dd class="font-disp font-bold text-[30px] leading-tight text-gold"><span class="count" data-target="4.8" data-decimals="1">0.0</span> ★</dd>
           </div>
           <div class="bg-coal px-5 py-4">
             <dt class="text-[12px] uppercase tracking-wider text-smoke">Reviews</dt>
-            <dd class="font-disp font-bold text-[30px] leading-tight">125+</dd>
+            <dd class="font-disp font-bold text-[30px] leading-tight"><span class="count" data-target="125">0</span>+</dd>
           </div>
           <div class="bg-coal px-5 py-4">
             <dt class="text-[12px] uppercase tracking-wider text-smoke">BBB Rating</dt>
@@ -194,7 +304,7 @@
       <div class="reveal card-glow group bg-coal border border-line rounded-xl p-7 transition-all duration-300 hover:-translate-y-1 hover:border-brand/60">
         <div class="flex items-start justify-between mb-8">
           <div class="w-12 h-12 rounded-lg bg-brand/10 border border-brand/25 flex items-center justify-center text-brandlite">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.2"/><path d="M12 3v2.6M12 18.4V21M3 12h2.6M18.4 12H21M5.6 5.6l1.9 1.9M16.5 16.5l1.9 1.9M18.4 5.6l-1.9 1.9M7.5 16.5l-1.9 1.9"/></svg>
+            <svg class="transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.2"/><path d="M12 3v2.6M12 18.4V21M3 12h2.6M18.4 12H21M5.6 5.6l1.9 1.9M16.5 16.5l1.9 1.9M18.4 5.6l-1.9 1.9M7.5 16.5l-1.9 1.9"/></svg>
           </div>
           <span class="num-ghost font-disp font-extrabold text-[44px] leading-none">01</span>
         </div>
@@ -205,7 +315,7 @@
       <div class="reveal d1 card-glow group bg-coal border border-line rounded-xl p-7 transition-all duration-300 hover:-translate-y-1 hover:border-brand/60">
         <div class="flex items-start justify-between mb-8">
           <div class="w-12 h-12 rounded-lg bg-brand/10 border border-brand/25 flex items-center justify-center text-brandlite">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M5 7l14 10M19 7 5 17"/><circle cx="12" cy="12" r="9"/></svg>
+            <svg class="transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M5 7l14 10M19 7 5 17"/><circle cx="12" cy="12" r="9"/></svg>
           </div>
           <span class="num-ghost font-disp font-extrabold text-[44px] leading-none">02</span>
         </div>
@@ -216,7 +326,7 @@
       <div class="reveal d2 card-glow group bg-coal border border-line rounded-xl p-7 transition-all duration-300 hover:-translate-y-1 hover:border-brand/60">
         <div class="flex items-start justify-between mb-8">
           <div class="w-12 h-12 rounded-lg bg-brand/10 border border-brand/25 flex items-center justify-center text-brandlite">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 13.5 13.5 3l3 3-1.5 1.5 2.5 2.5L21 6.5 17.5 21l-7-7L3 13.5Z"/><path d="m10.5 14-4 4"/></svg>
+            <svg class="transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 13.5 13.5 3l3 3-1.5 1.5 2.5 2.5L21 6.5 17.5 21l-7-7L3 13.5Z"/><path d="m10.5 14-4 4"/></svg>
           </div>
           <span class="num-ghost font-disp font-extrabold text-[44px] leading-none">03</span>
         </div>
@@ -227,7 +337,7 @@
       <div class="reveal d3 card-glow group bg-coal border border-line rounded-xl p-7 transition-all duration-300 hover:-translate-y-1 hover:border-brand/60">
         <div class="flex items-start justify-between mb-8">
           <div class="w-12 h-12 rounded-lg bg-brand/10 border border-brand/25 flex items-center justify-center text-brandlite">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/></svg>
+            <svg class="transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/></svg>
           </div>
           <span class="num-ghost font-disp font-extrabold text-[44px] leading-none">04</span>
         </div>
@@ -238,7 +348,7 @@
       <div class="reveal d4 card-glow group bg-coal border border-line rounded-xl p-7 transition-all duration-300 hover:-translate-y-1 hover:border-brand/60">
         <div class="flex items-start justify-between mb-8">
           <div class="w-12 h-12 rounded-lg bg-brand/10 border border-brand/25 flex items-center justify-center text-brandlite">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3c3 4.5 5.5 7.6 5.5 10.6a5.5 5.5 0 1 1-11 0C6.5 10.6 9 7.5 12 3Z"/></svg>
+            <svg class="transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3c3 4.5 5.5 7.6 5.5 10.6a5.5 5.5 0 1 1-11 0C6.5 10.6 9 7.5 12 3Z"/></svg>
           </div>
           <span class="num-ghost font-disp font-extrabold text-[44px] leading-none">05</span>
         </div>
@@ -249,7 +359,7 @@
       <div class="reveal d5 card-glow group bg-coal border border-line rounded-xl p-7 transition-all duration-300 hover:-translate-y-1 hover:border-brand/60">
         <div class="flex items-start justify-between mb-8">
           <div class="w-12 h-12 rounded-lg bg-brand/10 border border-brand/25 flex items-center justify-center text-brandlite">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.5 6.5a4 4 0 0 0-5.4 5.2L3 17.8V21h3.2l6.1-6.1a4 4 0 0 0 5.2-5.4l-2.6 2.6-2.4-.6-.6-2.4 2.6-2.6Z"/></svg>
+            <svg class="transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-6" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.5 6.5a4 4 0 0 0-5.4 5.2L3 17.8V21h3.2l6.1-6.1a4 4 0 0 0 5.2-5.4l-2.6 2.6-2.4-.6-.6-2.4 2.6-2.6Z"/></svg>
           </div>
           <span class="num-ghost font-disp font-extrabold text-[44px] leading-none">06</span>
         </div>
@@ -349,7 +459,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-20 sm:py-28 grid lg:grid-cols-2 gap-12 lg:gap-16">
       <div>
         <p class="reveal text-gold font-semibold uppercase tracking-[0.2em] text-[13px] mb-3">Find us</p>
-        <h2 class="reveal d1 font-disp italic font-extrabold uppercase text-[clamp(38px,6vw,64px)] leading-[0.95] tracking-tight mb-8">Swing by the<br/>new shop</h2>
+        <h2 class="reveal d1 font-disp italic font-extrabold uppercase text-[clamp(38px,6vw,64px)] leading-[0.95] tracking-tight mb-8">Swing by<br/>the shop</h2>
 
         <div class="reveal d2 space-y-6">
           <div class="flex gap-4 items-start">
@@ -358,13 +468,13 @@
             </div>
             <div>
               <p class="font-semibold">1605 W Front St, Selma, CA 93662</p>
-              <p class="text-smoke text-[14px] mt-0.5">Our new location — just off Highway 99.</p>
+              <p class="text-smoke text-[14px] mt-0.5">Just off Highway 99.</p>
               <a class="text-gold text-[14px] font-semibold hover:underline" href="https://www.google.com/maps/dir/?api=1&destination=Camacho+Tires,+1605+W+Front+St,+Selma,+CA+93662" target="_blank" rel="noopener">Open in Google Maps →</a>
             </div>
           </div>
           <div class="flex gap-4 items-start">
             <div class="w-11 h-11 rounded-lg bg-brand/10 border border-brand/25 flex items-center justify-center text-brandlite shrink-0">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="ring-anim"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg>
             </div>
             <div>
               <p class="font-semibold"><a href="tel:+15598980870" class="hover:text-brand transition-colors">(559) 898-0870</a></p>
@@ -415,7 +525,7 @@
       <p class="reveal d1 text-smoke mt-5 max-w-xl mx-auto text-[16px]">One call and we'll check stock in your size. In and out — usually while you wait.</p>
       <div class="reveal d2 mt-9">
         <a href="tel:+15598980870" class="inline-flex items-center gap-3 bg-brand hover:bg-brand-deep text-white font-bold px-9 py-5 rounded-md text-lg transition-colors">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="ring-anim"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg>
           Call (559) 898-0870
         </a>
       </div>
@@ -428,7 +538,7 @@
       <div class="flex items-center gap-2.5">
         <svg width="26" height="26" viewBox="0 0 40 40" fill="none" aria-hidden="true">
           <circle cx="20" cy="20" r="17" stroke="#F4F1EA" stroke-width="3.5"/>
-          <circle cx="20" cy="20" r="6.5" fill="#C2272D"/>
+          <circle cx="20" cy="20" r="6.5" fill="#E02227"/>
         </svg>
         <span class="font-disp italic font-bold uppercase tracking-wide text-[18px]"><span class="text-brand">Camacho</span> <span class="text-gold">Tires</span></span>
       </div>
@@ -446,16 +556,63 @@
   <!-- mobile sticky call bar -->
   <div class="sm:hidden fixed bottom-0 inset-x-0 z-50 p-3 bg-gradient-to-t from-ink via-ink/95 to-transparent">
     <a href="tel:+15598980870" class="flex items-center justify-center gap-2.5 bg-brand text-white font-bold py-4 rounded-lg text-[16px] shadow-lg shadow-brand/20">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="ring-anim"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.2 2.2Z"/></svg>
       Call Camacho Tires
     </a>
   </div>
 
   <script>
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    (() => {
+      const animateCount = (el) => {
+        const target = parseFloat(el.dataset.target);
+        const decimals = parseInt(el.dataset.decimals || '0', 10);
+        const start = performance.now();
+        const tick = (now) => {
+          const p = Math.min(1, (now - start) / 1200);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = (target * eased).toFixed(decimals);
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      };
+
+      const startReveals = () => {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              e.target.classList.add('in');
+              e.target.querySelectorAll('.count').forEach(animateCount);
+              io.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+      };
+
+      const loader = document.getElementById('loader');
+      if (!loader) return startReveals();
+
+      let seen = false;
+      try { seen = !!sessionStorage.getItem('camachoLoader'); } catch (e) {}
+      if (seen) { loader.remove(); startReveals(); return; }
+
+      document.documentElement.style.overflow = 'hidden';
+      const finish = () => {
+        try { sessionStorage.setItem('camachoLoader', '1'); } catch (e) {}
+        loader.classList.add('hide');
+        document.documentElement.style.overflow = '';
+        startReveals();
+        setTimeout(() => loader.remove(), 600);
+      };
+
+      const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const minTime = new Promise(r => setTimeout(r, reduced ? 600 : 2100));
+      const loaded = document.readyState === 'complete'
+        ? Promise.resolve()
+        : new Promise(r => window.addEventListener('load', r, { once: true }));
+      // never trap the visitor on the loader, even if an asset hangs
+      Promise.race([Promise.all([minTime, loaded]), new Promise(r => setTimeout(r, 5000))]).then(finish);
+    })();
   </script>
 </body>
 </html>
